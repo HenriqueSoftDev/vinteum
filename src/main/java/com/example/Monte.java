@@ -1,25 +1,27 @@
 package com.example;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Monte {
 
-    private List<Carta> carta = new ArrayList<>();
+    private List<Carta> cartas = new ArrayList<>();
 
-    public Monte (){
-
+    public Monte(List<Carta> cartas) {
+        for (int i = 0; i <= 13; i++){
+            cartas.add(new Carta(i, Naipe.Clubs));
+            cartas.add(new Carta(i, Naipe.Diamonds));
+            cartas.add(new Carta(i, Naipe.Hearts));
+            cartas.add(new Carta(i, Naipe.Spades));
+        }
     }
 
-    public void embaralhar  {
-
+    public void embaralhar(){
+        Collections.shuffle(cartas);
     }
 
-    public virar (Carta carta) {
-
-        return Carta.ge;
-
+    public Carta virar() {
+        return cartas.removeFirst();
     }
-
-
 }
