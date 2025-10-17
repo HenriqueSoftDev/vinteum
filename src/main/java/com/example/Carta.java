@@ -9,9 +9,6 @@ public class Carta {
         this.naipe = naipe;
     }
 
-    public Carta(){
-    }
-
     public String imagePath(){
         return "classic-cards/" + numero + this.naipe + ".png";
     }
