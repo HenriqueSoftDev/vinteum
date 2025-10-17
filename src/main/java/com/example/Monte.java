@@ -8,7 +8,7 @@ public class Monte {
 
     private List<Carta> cartas = new ArrayList<>();
 
-    public Monte(List<Carta> cartas) {
+    public Monte(){
         for (int i = 0; i <= 13; i++){
             cartas.add(new Carta(i, Naipe.Clubs));
             cartas.add(new Carta(i, Naipe.Diamonds));
