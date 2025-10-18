@@ -8,7 +8,7 @@ public class Jogo {
     public Jogo() {
         monte.embaralhar();
     }
-    public Carta distribuiCartaParaJogador(Jogador jogado){
+    public Carta distribuiCartaParaJogador(Jogador jogador){
         if (jogador.parou()){
             return null;
         }
@@ -23,10 +23,13 @@ public class Jogo {
     }
 
     public String resultado(){
-        if (computador.getPontos() > jogador.getPontos() && computador.getPontos() <= 21 ){
+        if (computador.getPontos() > 21 && jogador.getPontos() > 21){
+            return "Empate";
+        }
+        if ((computador.getPontos() > jogador.getPontos() && computador.getPontos() <= 21) || jogador.getPontos() > 21){
             return "Você perdeu!";
         }
-        if (jogador.getPontos() > computador.getPontos() && jogador.getPontos() <= 21){
+        if ((jogador.getPontos() > computador.getPontos() && jogador.getPontos() <= 21) || computador.getPontos() > 21){
             return "Você ganhou!";
         }
         return "Empate!";

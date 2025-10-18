@@ -22,6 +22,6 @@ public class Monte {
     }
 
     public Carta virar() {
-        return cartas.removeFirst();
+        return cartas.remove(0);
     }
 }
