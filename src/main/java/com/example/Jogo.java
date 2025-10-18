@@ -19,14 +19,14 @@ public class Jogo {
     }
 
     public boolean acabou(){
-        return computador.getPontos() > 21 || jogador.getPontos() > 21 || computador.parou() || jogador.parou();
+        return computador.getPontos() > 21 || jogador.getPontos() > 21 || (computador.parou() && jogador.parou());
     }
 
     public String resultado(){
-        if (computador.getPontos() > jogador.getPontos()){
+        if (computador.getPontos() > jogador.getPontos() && computador.getPontos() <= 21 ){
             return "Você perdeu!";
         }
-        if (jogador.getPontos() > computador.getPontos()){
+        if (jogador.getPontos() > computador.getPontos() && jogador.getPontos() <= 21){
             return "Você ganhou!";
         }
         return "Empate!";
@@ -39,4 +39,5 @@ public class Jogo {
     public Computador getComputador() {
         return computador;
     }
+
 }
